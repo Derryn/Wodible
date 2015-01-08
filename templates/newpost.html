@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+    <body>
+
+        <link type="text/css" rel="stylesheet" href="/static/style.css" />
+        
+        <h2>New Post</h2>
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr>
+        
+        <form method="post">
+            <table>
+                <tr>
+                    <td class="entry">Subject</td>
+                </tr>
+                <tr>
+                    <input type="text" name="subject" value="{{subject}}">
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td class="entry">Post Entry</td>
+                </tr>
+                <tr>
+                    <textarea name="content">{{content}}</textarea>
+                </tr>
+            </table>
+
+            <div class="error">{{error}}</div>
+            
+            <input type="submit">
+        
+        </form>
+    </body>
+ 
+</html>

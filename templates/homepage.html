@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="/static/style.css">
+    <title>Derryn's First Blog</title>
+</head>  
+
+{%if userName: %}
+	<div class="omega">Welcome Back {{userName}}</div>
+{%endif%}
+
+<h2>Blog</h2>
+
+<div class="nav">
+	{%if userName: %}
+	<span>
+		<a href="/newpost">Newpost</a>
+	</span>
+	{%endif%}
+	{% if not userName: %}
+	<span>
+		<a href="/signup">Signup</a>
+	</span>
+	<span>
+		<a href="/login">Login</a>
+	</span>
+	{%endif%}
+	{%if userName: %}
+	<span>
+		<a href="/logout">Logout</a>
+	</span>
+	{%endif%}
+</div>
+	<div class="omega">
+		Visits: {{visits}}
+		Queried {{cacheSeconds}} seconds ago
+	</div>
+
+
+
+<hr>
+
+{% for entry in entries %}
+<div class="post">
+    <div class="post-title">{{entry.subject}}</div>
+    <div class="post-content">{{entry.content}}</div>
+</div>
+{% endfor %}
+
+</html>
